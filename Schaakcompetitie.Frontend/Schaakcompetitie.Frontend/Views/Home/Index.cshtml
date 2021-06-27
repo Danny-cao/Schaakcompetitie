@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Schaakcompetitie.Frontend.DAL.Models.Stand>
+
+@{
+    ViewBag.Title = "Stand overzicht";
+    Layout = "_Layout";
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Stand Toevoegen</a>
+</p>
+
+<h1>Stand Overzicht</h1>
+
+<table class="table">
+    <caption>Standen</caption>
+    <thead>
+    <tr>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.Speler)
+        </th>
+        <th scope="col">
+            #
+        </th>
+        <th scope="col">
+            W
+        </th>
+        <th scope="col">
+            R
+        </th>
+        <th scope="col">
+            V
+        </th>
+        <th scope="col">
+            Score
+        </th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speler)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partij)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gewonnen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gelijk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Verloren)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Flurl" Version="3.0.1" />
+      <PackageReference Include="Flurl.Http" Version="3.0.1" />
+      <PackageReference Include="Polly" Version="7.2.1" />
+      <PackageReference Include="Roger.Abstractions" Version="1.0.1" />
+      <PackageReference Include="Roger.InMemoryBus" Version="1.0.0" />
+      <PackageReference Include="Roger.Microservices" Version="2.4.2" />
+      <PackageReference Include="Roger.RabbitMQBus" Version="1.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Partij\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Schaakcompetitie.Frontend.DAL\Schaakcompetitie.Frontend.DAL.csproj" />
+    </ItemGroup>
+
+</Project>

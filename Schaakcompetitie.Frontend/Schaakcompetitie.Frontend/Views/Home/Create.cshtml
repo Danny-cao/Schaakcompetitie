@@ -1,0 +1,43 @@
+@model Schaakcompetitie.Frontend.Models.PartijViewModel
+
+@{
+    ViewData["Title"] = "Stand Toevoegen";
+}
+
+
+
+<h1>Stand Toevoegen</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Witspeler" class="control-label"></label>
+                <input asp-for="Witspeler" class="form-control" />
+                <span asp-validation-for="Witspeler" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zwartspeler" class="control-label"></label>
+                <input asp-for="Zwartspeler" class="form-control" />
+                <span asp-validation-for="Zwartspeler" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Uitslag" class="control-label"></label>
+                <select asp-for="Uitslag" class="form-control">
+                    <option value="1">Wit wint (1-0)</option>
+                    <option value="3">Remise (½-½)</option>
+                    <option value="2">Zwart wint (0-1)</option>
+                </select>
+                <span asp-validation-for="Uitslag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

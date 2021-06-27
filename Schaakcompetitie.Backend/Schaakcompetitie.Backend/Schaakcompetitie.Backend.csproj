@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Schaakcompetitie.Backend.DAL\Schaakcompetitie.Backend.DAL.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Polly" Version="7.2.1" />
+      <PackageReference Include="Roger.Abstractions" Version="1.0.1" />
+      <PackageReference Include="Roger.InMemoryBus" Version="1.0.0" />
+      <PackageReference Include="Roger.Microservices" Version="2.4.2" />
+      <PackageReference Include="Roger.RabbitMQBus" Version="1.0.1" />
+    </ItemGroup>
+
+
+</Project>

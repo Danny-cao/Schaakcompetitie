@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schaakcompetitie.Backend", "Schaakcompetitie.Backend\Schaakcompetitie.Backend.csproj", "{84A7B06D-264B-4F8F-9226-3FA35A01D81D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schaakcompetitie.Backend.DAL", "Schaakcompetitie.Backend.DAL\Schaakcompetitie.Backend.DAL.csproj", "{E1668002-196C-4684-B11A-32DECDA4EA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schaakcompetitie.Backend.Test", "Schaakcompetitie.Backend.Test\Schaakcompetitie.Backend.Test.csproj", "{1DF45B9E-7B3C-4AF3-8FD1-870825B6082E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schaakcompetitie.Backend.DAL.Test", "Schaakcompetitie.Backend.DAL.Test\Schaakcompetitie.Backend.DAL.Test.csproj", "{FF62D01B-349F-49ED-912D-131F1D57676F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84A7B06D-264B-4F8F-9226-3FA35A01D81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A7B06D-264B-4F8F-9226-3FA35A01D81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A7B06D-264B-4F8F-9226-3FA35A01D81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A7B06D-264B-4F8F-9226-3FA35A01D81D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1668002-196C-4684-B11A-32DECDA4EA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1668002-196C-4684-B11A-32DECDA4EA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1668002-196C-4684-B11A-32DECDA4EA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1668002-196C-4684-B11A-32DECDA4EA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF45B9E-7B3C-4AF3-8FD1-870825B6082E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF45B9E-7B3C-4AF3-8FD1-870825B6082E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF45B9E-7B3C-4AF3-8FD1-870825B6082E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF45B9E-7B3C-4AF3-8FD1-870825B6082E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF62D01B-349F-49ED-912D-131F1D57676F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF62D01B-349F-49ED-912D-131F1D57676F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF62D01B-349F-49ED-912D-131F1D57676F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF62D01B-349F-49ED-912D-131F1D57676F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
