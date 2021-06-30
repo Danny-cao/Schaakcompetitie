@@ -1,0 +1,71 @@
+# Deploy to Azure Kubernetes Service
+# Build and push image to Azure Container Registry; Deploy to Azure Kubernetes Service
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - Schaakcompetitie/Schaakcompetitie.Backend/*
+pr:
+  branches:
+    include:
+    - '*'
+
+resources:
+  - repo: self
+
+variables:
+
+  # Container registry service connection established during pipeline creation
+  solutiondir: 'Schaakcompetitie/Schaakcompetitie.Backend'
+  projectdir: 'Schaakcompetitie.Backend'
+  dockerRegistryServiceConnection: 'Minor2020Registry'
+  imageRepository: 'dc-schaakcompetitie-api'
+  containerRegistry: 'minor2020.azurecr.io'
+  dockerfilePath: '$(solutiondir)/$(projectdir)/Dockerfile'
+  tag: 'v1.0.$(Build.BuildId)'
+  imagePullSecret: 'minordockersecret'
+  buildconfiguration: 'release'
+  projectPath: '$(solutiondir)/$(projectdir)'
+  solutionpath: '$(solutiondir)/Schaakcompetitie.Backend.sln'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+  - stage: DockerBuild
+    displayName: Build and publish Docker stage
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: NuGetAuthenticate@0
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: 'build'
+              projects: '$(solutionpath)'
+              arguments: '-c $(BuildConfiguration)'
+          - task: DotNetCoreCLI@2
+            displayName: 'dotnet publish'
+            inputs:
+              command: publish
+              publishWebProjects: false
+              projects: $(projectPath)/*.csproj
+              arguments: '-c Release -o "$(projectPath)/obj/Docker/publish"'
+              zipAfterPublish: false
+              modifyOutputPath: false
+          - task: Docker@2
+            displayName: Build and push an image to container registry
+            inputs:
+              containerRegistry: $(dockerRegistryServiceConnection)
+              repository: $(imageRepository)
+              command: buildAndPush
+              dockerfile: $(dockerfilePath)
+              tags: |
+                $(tag)
+                latest
