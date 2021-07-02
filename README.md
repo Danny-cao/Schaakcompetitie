@@ -1,6 +1,8 @@
-# Schaakcompititie (Case for Minor: Continuous Delivery in large and complex software sytems )
+# Schaakcompititie 
 
- ## Table of contents
+Case for Minor: Continuous Delivery in large and complex software sytems @Hogeschool Utrecht / Info Support
+
+## Table of contents
 * [Description](#description)
 * [Requirements](#requirements)
 * [Demo](#demo)
