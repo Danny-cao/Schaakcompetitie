@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: dc-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+
+  - http:
+      paths:
+      - path: /dc/rabbitmq(/|$)(.*)
+        backend:
+          serviceName: rabbitmq-service
+          servicePort: 15672
+
+  - http:
+      paths:
+      - path: /dc/frontend(/|$)(.*)
+        backend:
+          serviceName: schaakwebservice-service
+          servicePort: 80
+
+  - http:
+      paths:
+      - path: /dc/api(/|$)(.*)
+        backend:
+          serviceName: schaakapiservice-service
+          servicePort: 80

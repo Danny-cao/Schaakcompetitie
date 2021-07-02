@@ -1,0 +1,45 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: schaakapiservice-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schaakapiservice
+  template:
+    metadata:
+      labels:
+        app: schaakapiservice
+    spec:
+      imagePullSecrets:
+        - name: minordockersecret
+      containers:
+        - name: schaakapiservice
+          image: minor2020.azurecr.io/dc-schaakcompetitie-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources: 
+            limits: 
+              cpu: 60m 
+              memory: 256Mi 
+            requests: 
+              cpu: 30m 
+              memory: 128Mi
+          env:              
+            - name: ConnectionStrings__MySql
+              valueFrom:
+                secretKeyRef:
+                  name: schaakapiservice-secret
+                  key: connection-string
+            - name: ConnectionStrings__RabbitMQ
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-secret
+                  key: connection-string
+            - name: Eventbus__Exchange
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-secret
+                  key: exchange

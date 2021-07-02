@@ -1,0 +1,48 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+   include:
+     - Schaakcompetitie/_kubernetes/*
+
+variables:
+  path: 'Schaakcompetitie/_kubernetes/'
+  cluster: 'minor2020Cluster-dc'
+  kubernetesNamespace: 'dc'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: Kubernetes@1
+    displayName: schaakwebservice - Apply new deployment
+    inputs:
+      connectionType: 'Kubernetes Service Connection'
+      kubernetesServiceEndpoint: '$(cluster)'
+      namespace: '$(kubernetesNamespace)'
+      command: 'apply'
+      arguments: '-f $(path)schaakweb'
+
+  - task: Kubernetes@1
+    displayName: schaakapiservice - Apply new deployment
+    inputs:
+      connectionType: 'Kubernetes Service Connection'
+      kubernetesServiceEndpoint: '$(cluster)'
+      namespace: '$(kubernetesNamespace)'
+      command: 'apply'
+      arguments: '-f $(path)schaakapi'
+
+  - task: Kubernetes@1
+    displayName: Update ingress
+    inputs:
+      connectionType: 'Kubernetes Service Connection'
+      kubernetesServiceEndpoint: '$(cluster)'
+      namespace: '$(kubernetesNamespace)'
+      command: 'apply'
+      arguments: '-f $(path)_general/ingress.yml'

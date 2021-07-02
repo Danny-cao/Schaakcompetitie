@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    service: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: mysql
+  template:
+    metadata:
+      labels:
+        service: mysql
+    spec:
+      volumes:
+        - name: schaak-mysql-claim
+          persistentVolumeClaim:
+            claimName: schaak-mysql-claim
+      containers:
+        - name: mysql
+          image: mysql:5.6
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: schaak-mysql-claim
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password
+          resources:
+            limits:
+              cpu: 120m
+              memory: 512Mi
+            requests:
+              cpu: 60m
+              memory: 256Mi
