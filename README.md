@@ -11,12 +11,14 @@ Case for Minor: Continuous Delivery in large and complex software sytems @Hogesc
 
 ## Description
 
+![Architecture](/_images/Architecture.png)
+
 
 ## Functionality
 
 - adding players
 - adding a game result
-- overview of the standings
+- show an overview of the standings
 
 
 ## Requirements
@@ -32,7 +34,6 @@ Case for Minor: Continuous Delivery in large and complex software sytems @Hogesc
 ## Deliverables
 
 - Docker image(s) in the Azure container registry
-- Docker-compose file to run it locally
 - Source code in git repo
 - Build pipelines
 - Kubernetes file for production
