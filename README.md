@@ -40,16 +40,52 @@ Services and Eventbus
 
 show an overview of the standings
 > As an Organiser
+>
 > I want to view the standings of the chess tournament
+>
 > So that everyone can see how the players are doing in the chess tournament
 
+<br>
 
+Given the following games in the database:
+
+| Wit            | Zwart          | Uitslag        |
+|----------------|----------------|----------------|
+| Pietje Jan     | Leslie de Boer | Wit Wint (1)   |
+| Jan Hamoen     | Kees de Koning | Zwart wint (2) |
+| Leslie de Boer | Joost Paard    | Remise (3)     |
+
+<br>
+
+The standings are as follows:
+
+| Naam           | # | W | R | V | Score |
+|----------------|---|---|---|---|-------|
+| Pietje Jan     | 1 | 1 | 0 | 0 | 1     |
+| Kees de Koning | 1 | 1 | 0 | 0 | 1     |
+| Leslie de Boer | 2 | 0 | 1 | 1 | 0.5   |
+| Joost Paard    | 1 | 0 | 1 | 0 | 0.5   |
+| Jan Hamoen     | 1 | 0 | 0 | 1 | 0     |
+
+<br>
+
+Where # stands for the number of games played, W stands for the number of games won, R stands for the number of games that have been drawn (drawn), 
+and V stands for the number of games that have been lost.
+The score is calculated as follows: For each game won, the player earns 1 point, each draw is worth half a point, and each game lost is worth 0 points.
+
+<br>
 
 adding a game result
 > As an Organiser 
+>
 > I want to be able to add a game result
+>
 > So that the overview of the standings can be updated 
 
+<br>
+
+- Every player has a different name
+- You cannot put the same name as white and black.
 
 ## Requirements
 
