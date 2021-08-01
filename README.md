@@ -4,7 +4,7 @@ Case for Minor: Continuous Delivery in large and complex software sytems @Hogesc
 
 ## Table of contents
 * [Description](#description)
-* [Architecture](#Architecture)
+* [Architecture](#architecture)
 * [Functionality](#functionality)
 * [Requirements](#requirements)
 * [Deliverables](#deliverables)
@@ -105,3 +105,5 @@ adding a game result
 - Kubernetes file for production
 
 ## Demo
+
+[schaakcompetitie.dannycao.io](http://schaakcompetitie.dannycao.io)
