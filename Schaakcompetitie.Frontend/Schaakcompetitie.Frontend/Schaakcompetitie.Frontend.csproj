@@ -16,6 +16,7 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Pages\Partij\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Partij\Index.cshtml" />
     </ItemGroup>
 
     <ItemGroup>

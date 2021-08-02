@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Schaakcompetitie.Frontend.DAL.DataMappers;
 using Schaakcompetitie.Frontend.DAL.Models;
 using Schaakcompetitie.Frontend.EventListeners.Commands;
@@ -70,11 +67,6 @@ namespace Schaakcompetitie.Frontend.Controllers
             catch(FlurlHttpException e) {
                 return RedirectToAction("Index");    
             }
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
