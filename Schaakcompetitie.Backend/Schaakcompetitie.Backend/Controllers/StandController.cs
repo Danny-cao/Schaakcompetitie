@@ -1,14 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Roger.MicroServices.Events;
 using Schaakcompetitie.Backend.DAL.DataMapper;
 using Schaakcompetitie.Backend.DAL.DTO;
 using Schaakcompetitie.Backend.DAL.Models;
-using Schaakcompetitie.Backend.Events;
 using Schaakcompetitie.Backend.Services;
 
 namespace Schaakcompetitie.Backend.Controllers
