@@ -19,7 +19,7 @@ In this application, an organizer can add a game result between two chess player
 
 This project was made for the Minor: "Continuous Delivery in large and complex software systems". The goal of this project was to show that I understood the things I had learned throughout the Minor. I was encouraged to adopt the Test-driven Development approach to make sure that the majority of the functionality was tested. I also had to show that I had a good understanding of Azure Pipelines, Event-driven Architecture and that I was able to work with Kubernetes, and Docker.
 
-The application itself doesn't have complex functionalities because the project was more focused on me being able to implement the architecture in a short amount of time (2 days of 7 hours).
+The application itself doesn't have complex functionalities because the project was more focused on me being able to implement the architecture in a short amount of time (2 days of 7 hours a day).
 
 
 ## Architecture
@@ -38,7 +38,7 @@ Services and Eventbus
 
 ## Functionality
 
-show an overview of the standings
+Show an overview of the standings
 > As an Organiser
 >
 > I want to view the standings of the chess tournament
@@ -75,7 +75,7 @@ The score is calculated as follows: For each game won, the player earns 1 point,
 
 <br>
 
-adding a game result
+Adding a game result
 > As an Organiser 
 >
 > I want to be able to add a game result
