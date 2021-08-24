@@ -106,4 +106,4 @@ Adding a game result
 
 ## Demo
 
-[schaakcompetitie.dannycao.io](http://schaakcompetitie.dannycao.io)
+[demo](http://schaakcompetitie.dannycao.io)
